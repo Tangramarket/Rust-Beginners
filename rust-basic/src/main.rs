@@ -30,7 +30,7 @@ fn main() {
 	println!("const - The value of NUM is {}", NUM);
 	println!();
 	
-    println!("Hello, world!");
+    println!("Hello, Beginner!");
 	let var = "OK";
 	println!("var - The value of var is: {}", var);
 	println!();
