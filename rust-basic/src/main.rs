@@ -1,4 +1,4 @@
-const NUM:i32 = 100;
+const NUM:i32 = 1000;
 
 fn funt(x: i32, y: i32) { // define a function
 	println!("funt() - The sum is: {}", x + y);
