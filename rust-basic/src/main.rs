@@ -59,5 +59,13 @@ fn main() {
 	// funt
 	funt(100, 200); // calls the function
 	
+	// mutable variables
+	let mut aa = 100; // variable-binding
+	let mut bb = 200;
+	aa = aa + 300;
+	bb = bb + 400;
+	println ! ("Finally a is {}", aa);
+	println ! ("Finally b is {}", bb);
+	
 }
 
