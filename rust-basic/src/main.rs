@@ -61,7 +61,7 @@ fn main() {
 
     //Arithmetical Operators
     println!();
-	println!("-- Arithmetical Operators --");
+    println!("-- Arithmetical Operators --");
     println!("10 + 2 = {}", 10 + 2);
     println!("10 - 2 = {}", 10 - 2);
     println!("10 * 2 = {}", 10 * 2);
@@ -70,7 +70,7 @@ fn main() {
 
     //Logical Operators
     println!();
-	println!("-- Logical Operators --");
+    println!("-- Logical Operators --");
     println!("true AND false is {}", true && false); // and &&
     println!("true OR false is {}", true || false); // or ||
     println!("NOT true is {}", !true); // not !
@@ -108,7 +108,16 @@ fn main() {
     println!(
         "{} {} {} {}",
         a_array2[0], a_array2[1], a_array2[2], a_array2[3]
-    )
+    );
+
+    //Slice
+    println!();
+    println!("-- Slice --");
+    let array3 = [0, 10, 20, 30, 40, 50, 60]; // create an array
+    let slice = &array3[2..5]; /* extract three elements from a[2] to a[4], now the slice contains three elements */
+    println!("{}", slice[0]);
+    println!("{}", slice[1]);
+    println!("{}", slice[2]);
 }
 
 fn foo() -> bool {
