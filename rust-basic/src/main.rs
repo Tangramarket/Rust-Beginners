@@ -77,12 +77,12 @@ fn main() {
     println!();
     let _xx: i32 = 1000;
     let _yy: i32 = 2000;
-    println!("x is greater than y: {}", x > y);
-    println!("x is less than y: {}", x < y);
-    println!("x is unequal to y: {}", x != y); // != without space
-    println!("x is greater/equal to y: {}", x >= y);
-    println!("x is less/equal to y: {}", x <= y);
-    println!("x is completely equal to y: {}", x == y);
+    println!("x is greater than y: {}", _xx > _yy);
+    println!("x is less than y: {}", _xx < _yy);
+    println!("x is unequal to y: {}", _xx != _yy); // != without space
+    println!("x is greater/equal to y: {}", _xx >= _yy);
+    println!("x is less/equal to y: {}", _xx <= _yy);
+    println!("x is completely equal to y: {}", _xx == _yy);
 }
 
 fn foo() -> bool {
