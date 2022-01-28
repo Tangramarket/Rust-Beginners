@@ -118,6 +118,27 @@ fn main() {
     println!("{}", slice[0]);
     println!("{}", slice[1]);
     println!("{}", slice[2]);
+
+    //If Statement
+    println!();
+    println!("-- If Statement --");
+    let number = 10;
+    if number == 10 {
+        println!("num is equal to 10");
+    }
+
+    //If-else Statement
+    println!();
+    println!("-- If-else Statement --");
+    let num1 = 99;
+    let num2 = 888;
+    if num1 > num2 {
+        println!("num1 is greater than num2");
+    } else {
+        println!("num1 is smaller than num2");
+    }
+	
+	
 }
 
 fn foo() -> bool {
