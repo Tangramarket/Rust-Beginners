@@ -61,6 +61,7 @@ fn main() {
 
     //Arithmetical Operators
     println!();
+	println!("-- Arithmetical Operators --");
     println!("10 + 2 = {}", 10 + 2);
     println!("10 - 2 = {}", 10 - 2);
     println!("10 * 2 = {}", 10 * 2);
@@ -69,12 +70,14 @@ fn main() {
 
     //Logical Operators
     println!();
+	println!("-- Logical Operators --");
     println!("true AND false is {}", true && false); // and &&
     println!("true OR false is {}", true || false); // or ||
     println!("NOT true is {}", !true); // not !
 
     //Comparison Operators
     println!();
+    println!("-- Comparison Operators --");
     let _xx: i32 = 1000;
     let _yy: i32 = 2000;
     println!("x is greater than y: {}", _xx > _yy);
@@ -86,18 +89,26 @@ fn main() {
 
     //Arrays
     println!();
-    println!("Array");
-	// The first way
-    let mut a_array: [i32; 4] = [100; 4]; // create an array type i32, 4 elements, default value is 100
-    a_array[1] = 77;
-    a_array[2] = 88;
+    println!("-- Arrays --");
+    // The first way
+    let mut a_array1: [i32; 4] = [100; 4]; // create an array type i32, 4 elements, default value is 100
+    a_array1[1] = 77;
+    a_array1[2] = 88;
     println!(
         "{} {} {} {}",
-        a_array[0],
-        a_array[1],
-        a_array[2],
-        a_array[3] // [0] and [3] are with default values = 100
+        a_array1[0],
+        a_array1[1],
+        a_array1[2],
+        a_array1[3] // [0] and [3] are with default values = 100
     );
+
+    // The second way
+    println!();
+    let a_array2: [f32; 4] = [0.1, 0.2, 0.3, 0.4]; // create an	array secon way
+    println!(
+        "{} {} {} {}",
+        a_array2[0], a_array2[1], a_array2[2], a_array2[3]
+    )
 }
 
 fn foo() -> bool {
