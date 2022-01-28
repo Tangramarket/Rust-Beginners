@@ -57,6 +57,7 @@ fn main() {
     let y_str = String::from("hello"); // get text directly
     let z_str: &str = "hello"; // reference a text
     print!("{} {} {} ", x_str, y_str, z_str);
+    println!();
 
     //Arithmetical Operators
     println!();
@@ -65,6 +66,23 @@ fn main() {
     println!("10 * 2 = {}", 10 * 2);
     println!("10 / 2 = {}", 10 / 2);
     println!("10 % 2 = {}", 10 % 2); // modulus operator divides the 1st by the 2nd number and returns the remainder
+
+    //Logical Operators
+    println!();
+    println!("true AND false is {}", true && false); // and &&
+    println!("true OR false is {}", true || false); // or ||
+    println!("NOT true is {}", !true); // not !
+
+    //Comparison Operators
+    println!();
+    let _xx: i32 = 1000;
+    let _yy: i32 = 2000;
+    println!("x is greater than y: {}", x > y);
+    println!("x is less than y: {}", x < y);
+    println!("x is unequal to y: {}", x != y); // != without space
+    println!("x is greater/equal to y: {}", x >= y);
+    println!("x is less/equal to y: {}", x <= y);
+    println!("x is completely equal to y: {}", x == y);
 }
 
 fn foo() -> bool {
