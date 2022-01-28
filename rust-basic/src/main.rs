@@ -83,6 +83,21 @@ fn main() {
     println!("x is greater/equal to y: {}", _xx >= _yy);
     println!("x is less/equal to y: {}", _xx <= _yy);
     println!("x is completely equal to y: {}", _xx == _yy);
+
+    //Arrays
+    println!();
+    println!("Array");
+	// The first way
+    let mut a_array: [i32; 4] = [100; 4]; // create an array type i32, 4 elements, default value is 100
+    a_array[1] = 77;
+    a_array[2] = 88;
+    println!(
+        "{} {} {} {}",
+        a_array[0],
+        a_array[1],
+        a_array[2],
+        a_array[3] // [0] and [3] are with default values = 100
+    );
 }
 
 fn foo() -> bool {
