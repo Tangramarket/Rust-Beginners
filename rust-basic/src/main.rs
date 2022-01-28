@@ -1,18 +1,4 @@
-
 const NUM:i32 = 90;
-
-
-fn funt(x: i32, y: i32) { // define a function
-	println!("funt() - The sum is: {}", x + y);
-}
-
-fn funt2(num: i32) -> i32{ // specify a return type
-	num + 200 // return a value to the caller, without ;
-}
-
-fn foo() -> bool { // specify a return type
-	return true // return a value to the caller, without ;
-}
 
 fn main() {
 	
@@ -20,8 +6,7 @@ fn main() {
 	println!();
 	let b = foo(); //foo() is a caller
 	println!("fn foo() - The result is: {}", b);
-	
-	
+		
 	// fun2()
 	println!();
 	let num = funt2(100); //calls the function
@@ -46,8 +31,8 @@ fn main() {
 	let x = 100;
 	let y = 200;
 	let z = 300;
-	println!("{}", x);
-	print!("{} {}", y, z);
+	println!("{}", x); // new line
+	print!("{} {}", y, z); // the same line
 	println!();
 	
 	let var1:f32 = 100.88;
@@ -67,5 +52,25 @@ fn main() {
 	println ! ("Finally a is {}", aa);
 	println ! ("Finally b is {}", bb);
 	
+	//String Assignment - 3 methods
+	println!();
+	let x_str = "hello".to_string(); // convert text to a string
+	let y_str = String::from("hello"); // get text directly
+	let z_str :&str = "hello"; // reference a text
+	print ! ("{} {} {} ", x_str, y_str, z_str);
 }
+
+fn foo() -> bool { // specify a return type
+	return true // return a value to the caller, without ;
+}
+
+fn funt2(num: i32) -> i32{ // specify a return type
+	num + 200 // return a value to the caller, without ;
+}
+
+fn funt(x: i32, y: i32) { // define a function
+	println!("funt() - The sum is: {}", x + y);
+}
+
+
 
