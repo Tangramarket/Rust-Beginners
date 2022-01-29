@@ -152,6 +152,37 @@ fn main() {
         false
     };
     println!("Is teenager: {}", is_teenager);
+
+    //Loop – Break Statement
+    println!();
+    println!("-- Loop – Break Statement --");
+    let mut hours = 5;
+    loop {
+        // loop statement
+        println!("Rust in {} Hours", hours); // from 5 to 8
+        if hours == 8 {
+            break; // break statement
+        }
+        hours = hours + 1;
+    }
+
+    //For Statement
+    println!();
+    println!("-- For Statement --");
+    for _hours in 5..9 {
+        // “5 .. 9” contains numbers from 5 to 8
+        println!("Java in {} Hours", _hours); // from 5 to 8 only!
+    }
+
+    //While Statement
+    println!();
+    println!("-- While Statement --");
+    let mut while_num = 0;
+    while while_num <= 8 {
+        // while statement
+        print!("{} ", while_num); // 0 1 2 3 4 5 6 7 8
+        while_num = while_num + 1;
+    }
 }
 
 fn foo() -> bool {
