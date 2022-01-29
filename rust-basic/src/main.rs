@@ -183,6 +183,25 @@ fn main() {
         print!("{} ", while_num); // 0 1 2 3 4 5 6 7 8
         while_num = while_num + 1;
     }
+    println!();
+
+    //Tuples
+    println!();
+    println!("-- Tuples --");
+    let t = ("Python in", 8, "Hours", true); // create a tuple
+    print!("{} {} {} {}", t.0, t.1, t.2, t.3); // access the elements
+
+    //Match
+    println!();
+    println!("-- Match --");
+    let num_match: i32 = 3; // given expression
+    match num_match {
+        1 => println!("one"),
+        2 => println!("two"),
+        3 => println!("three"), // match this
+        4 => println!("four"),
+        _ => println!("something else"), // if don't match above values, run this
+    }
 }
 
 fn foo() -> bool {
