@@ -137,8 +137,21 @@ fn main() {
     } else {
         println!("num1 is smaller than num2");
     }
-	
-	
+
+    //Let-If Statement
+    println!();
+    println!("-- Let-If Statement --");
+    let age = 10; // >= 13  < 20 for True
+    let is_teenager = if age < 20 {
+        if age >= 13 {
+            true
+        } else {
+            false
+        }
+    } else {
+        false
+    };
+    println!("Is teenager: {}", is_teenager);
 }
 
 fn foo() -> bool {
