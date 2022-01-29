@@ -1,24 +1,47 @@
 const NUM: i32 = 90;
 
+struct Member {
+    // create a struct
+    id: i32, // member : type i32
+    name: String,
+    working: bool,
+}
+
+struct Square {
+    // create a struct
+    len: i32,
+    wid: i32,
+}
+
+enum Language {
+    // define an enum
+    JS, // member
+    GO,
+    VB,
+}
+
 fn main() {
+    println!();
+    println!("Hello, Beginner!");
+    let var = "OK";
+    println!("var - The value of var is: {}", var);
+
     //fn foo()
     println!();
+    println!("-- foo() is a caller --");
     let b = foo(); //foo() is a caller
     println!("fn foo() - The result is: {}", b);
 
     // fun2()
     println!();
+    println!("-- calls the function --");
     let num = funt2(100); //calls the function
     println!("fun2() - The value of num is: {}", num);
 
     //const
     println!();
+    println!("-- const --");
     println!("const - The value of NUM is {}", NUM);
-    println!();
-
-    println!("Hello, Beginner!");
-    let var = "OK";
-    println!("var - The value of var is: {}", var);
     println!();
 
     let var0: i32 = 100; // defines the type of var as i32
@@ -41,9 +64,11 @@ fn main() {
     println!();
 
     // funt
+    println!("-- Calls the function --");
     funt(100, 200); // calls the function
 
     // mutable variables
+    println!("-- Mutable variabless --");
     let mut aa = 100; // variable-binding
     let mut bb = 200;
     aa = aa + 300;
@@ -53,6 +78,7 @@ fn main() {
 
     //String Assignment - 3 methods
     println!();
+    println!("-- String Assignment - 3 methods --");
     let x_str = "hello".to_string(); // convert text to a string
     let y_str = String::from("hello"); // get text directly
     let z_str: &str = "hello"; // reference a text
@@ -202,6 +228,79 @@ fn main() {
         4 => println!("four"),
         _ => println!("something else"), // if don't match above values, run this
     }
+
+    //Struct
+    // Outside fn main()
+    /*
+    struct Member {
+    // create a struct
+    id: i32, // member : type i32
+    name: String,
+    working: bool,
+    } */
+    println!();
+    println!("-- Struct --");
+    let clerk = Member {
+        // initialize the struct
+        id: 016320, // member : value
+        name: "Smith".to_string(),
+        working: true,
+    };
+    println!("ID is {}", clerk.id); // access the members
+    println!("Name is {}", clerk.name);
+    println!("Working is {}", clerk.working);
+    println!();
+
+    /*
+    struct Square {
+    // create a struct, Outside fn main()
+    len: i32,
+    wid: i32,
+    }
+    */
+    let table = Square { len: 10, wid: 8 }; // 	initialization
+    println!("The area is {}", table.len * table.wid); // access
+
+    //Enum. Enumeration is a custom data type that contains certain values
+    /* Outside fn main()
+    enum Language {
+    // define an enum
+    JS, // member
+    GO,
+    VB,
+    }
+    */
+    // fn program(var: Language) - Outside fn main()
+    println!();
+    println!("-- Enum --");
+    program(Language::JS); // access the member
+    program(Language::GO);
+    program(Language::VB);
+
+    /*
+    //Ownership
+    println!();
+    println!("-- Ownership --");
+    let _old_owner = String::from("try"); // old_owner owns “try”
+    let _new_owner = _old_owner; // Warning ! The ownership of old_owner moves to new_owner
+    println!("{}", _old_owner); // Error ! old_owner is no longer available
+                                /* For more information about this error, try `rustc --explain E0382`.
+                                error: could not compile `rust-basic` due to previous error */
+
+
+    let s =String :: from("R in 8 Hours"); // s owns “R in 8 Hours”
+    let n=cal( s ); // Warning ! s will lose the ownership after used
+    println ! ("Value of the string is : {}", s ); // s is no longer available
+    println ! ("Length of the string is : {}",n);
+    */
+
+    //Reference
+    println!();
+    println!("-- Reference --");
+    let _s = String::from("R in 8 Hours");
+    let _n = cal_ref(&_s); // reference
+    println!("Value of the string is : {}", _s);
+    println!("Length of the string is : {}", _n);
 }
 
 fn foo() -> bool {
@@ -217,4 +316,27 @@ fn funt2(num: i32) -> i32 {
 fn funt(x: i32, y: i32) {
     // define a function
     println!("funt() - The sum is: {}", x + y);
+}
+
+// for Enum example
+fn program(var: Language) {
+    match var {
+        // using match statement
+        Language::JS => println!("JS in 8 Hours"),
+        Language::GO => println!("GO in 8 Hours"),
+        Language::VB => println!("VB in 8 Hours"),
+    }
+}
+
+/*
+//with Ownership example
+fn cal (s : String) -> usize {
+    s . len() // get the length of the string
+}
+*/
+
+//Reference
+fn cal_ref(s: &String) -> usize {
+    // reference
+    s.len() // get the length of the string
 }
