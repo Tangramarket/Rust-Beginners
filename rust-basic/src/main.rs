@@ -20,6 +20,71 @@ enum Language {
     VB,
 }
 
+mod my_module {
+    // define a module
+    pub fn test() {
+        // pub means public attribute
+        println!("Hello, My Friends! Reuslt from my_module");
+    }
+}
+
+mod mod_with_emb {
+    pub fn a() {
+        println!("Result from mod_with_emb Module");
+    }
+
+    pub mod emb_module {
+        // embedded module, public
+        pub fn b() {
+            println!("Result from emb_module");
+        }
+    }
+}
+
+// Load the external file and function
+mod ext_file_test; // loads an external file
+use ext_file_test::ext_fun; //loads an external function
+
+// Private Function
+mod my_mod_private_fun {
+    pub fn public_a() {
+        // function is public
+        println!("Public Function - public_a");
+    }
+
+    /*
+    // Function is never used, Therefore an error occurred
+    fn private_b() {
+        println!("Private Function - private_b");
+    }
+    */
+
+    pub fn public_a2() {
+        println!("Public Function - public_a2");
+        private_b2(); //Call a private function private_b2, no error occurred
+    }
+
+    fn private_b2() {
+        println!("PRIVATE Function - public_b2");
+    }
+}
+
+// Super
+mod super_module {
+    // Parent Module
+    fn a_parent() -> i32 {
+        100 // without ;
+    }
+
+    pub mod sub_module {
+        // Child module
+        use super::a_parent; // access parent function a_super
+        pub fn b_child() {
+            println!("{}", a_parent()); // Calls parent function a_parent
+        }
+    }
+}
+
 fn main() {
     println!();
     println!("Hello, Beginner!");
@@ -301,6 +366,40 @@ fn main() {
     let _n = cal_ref(&_s); // reference
     println!("Value of the string is : {}", _s);
     println!("Length of the string is : {}", _n);
+
+    //Module
+    println!();
+    println!("-- Module --");
+    my_module::test(); // run the module
+
+    //Embedded Module
+    println!();
+    println!("-- Embedded Module --");
+    mod_with_emb::a();
+    mod_with_emb::emb_module::b(); //runs the embedded module & function
+
+    //External File
+    println!();
+    println!("-- External File --");
+    ext_fun(); // calls the external function
+
+    //Private Function
+    println!();
+    println!("-- Private Function --");
+    my_mod_private_fun::public_a();
+    /* Calls function private_b from outside the module . Therefore an error occurred .
+    my_mod_private_fun::private_b();
+    */
+
+    // Calls function private_b2 from public_a2, No error occurred
+    println!();
+    println!("-- Private Function - No error occurred --");
+    my_mod_private_fun::public_a2();
+
+    //Super
+    println!();
+    println!("-- Super --");
+    super_module::sub_module::b_child(); // call function b_child
 }
 
 fn foo() -> bool {
