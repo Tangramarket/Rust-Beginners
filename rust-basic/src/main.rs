@@ -85,6 +85,52 @@ mod super_module {
     }
 }
 
+//Method
+struct Circle {
+    // create a struct type
+    radius: f32, // struct member
+}
+
+impl Circle {
+    // implement the struct
+    fn area(&self) -> f32 {
+        // define a method
+        std::f32::consts::PI * self.radius * self.radius
+    } // method body
+}
+
+// Trait
+struct CircleTrait {
+    // create a struct type
+    radius: f32, // struct member
+}
+
+trait Calculate {
+    // define a trait
+    fn area(&self) -> f32; // define a trait method
+}
+
+impl Calculate for CircleTrait {
+    // implement the trait
+    fn area(&self) -> f32 {
+        // implement the trait method
+        std::f32::consts::PI * self.radius * self.radius
+    }
+}
+
+// Drop() Method - LIFO
+struct Game {
+    number: i32,
+}
+
+impl Drop for Game {
+    fn drop(&mut self) {
+        // define a drop method
+        println!("The #{ } Winner . ", self.number);
+    }
+}
+
+// fn main() Start
 fn main() {
     println!();
     println!("Hello, Beginner!");
@@ -498,7 +544,49 @@ fn main() {
             println!("gen_m = None")
         }
     }
-}
+
+    // Method
+    println!();
+    println!("-- Method --");
+    let obj = Circle { radius: 2000.00 }; // create a struct object
+    println!("The Circle area is : {}", obj.area()); // call the method
+
+    // Trait, interface in Rust
+    println!();
+    println!("-- Trait --");
+    let obj = CircleTrait { radius: 2000.00 }; // create a struct object
+    println!("The Circle area is : {}", obj.area()); // call the method
+
+    // Closure
+    println!();
+    println!("-- Closure --");
+    let my_closure = |num: i32| num + 200; // create a closure
+    let num = 100;
+    println!("{}", my_closure(num)); // call the closure
+
+    println!();
+    println!("-- Closure --");
+    let mut capacity = "Hard disk capacity : 5000".to_string();
+    {
+        let mut my_closure = |c: char| capacity.push(c); // closure
+        my_closure('G'); // call the closure
+    }
+    println!("{:?}", capacity); // { : ?} is used to output a string
+
+    // Error Checking
+    println!();
+    println!("-- Error Checking --");
+    let check: bool = true; // suppose it is true
+    assert!(check == true); // check the error
+    println!("{}", check);
+
+    // Drop() Method - LIFO
+    println!();
+    println!("-- Drop --");
+    let _baseball = Game { number: 3 };
+    let _football = Game { number: 2 };
+    let _basketball = Game { number: 1 };
+} // end fn main()
 
 fn foo() -> bool {
     // specify a return type
