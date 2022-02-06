@@ -400,6 +400,104 @@ fn main() {
     println!();
     println!("-- Super --");
     super_module::sub_module::b_child(); // call function b_child
+
+    //Vector
+    println!();
+    println!("-- Vector 1st method --");
+    let v1 = vec![100, 200, 300, 400]; // create a vector
+    println!("First element is : {}", v1[0]); // access the first element
+    println!("Second element is : {}", v1[1]);
+    println!("Third element is : {}", v1[2]);
+    println!("Fourth element is : {}", v1[3]);
+
+    println!();
+    println!("-- Vector 2nd method --");
+    let v2 = vec![10; 3]; // repeat three times, also let v2 = vec!["a"; 3];
+    println!("First element is : {}", v2[0]);
+    println!("Second element is : {}", v2[1]);
+    println!("Third element is : {}", v2[2]);
+
+    println!();
+    println!("-- Vector 3rd method --");
+    let mut v3 = Vec::new(); // create a vector
+    v3.push('L'); // set L as the first element of vector
+    v3.push('O');
+    v3.push('N');
+    v3.push('D');
+    v3.push('O');
+    v3.push('N');
+    for n in v3 {
+        print!("{}", n);
+    }
+
+    // Multiple Patterns
+    println!();
+    println!();
+    println!("-- Multiple Patterns - use | to match multiple patterns --");
+    let patt_num = 3;
+    match patt_num {
+        1 => println!("one"),
+        2 | 3 => println!("two or three"), // multiple patterns
+        _ => println!("others"),
+    }
+
+    // Range
+    println!();
+    println!("-- Range --");
+    let range_x = 4;
+    match range_x {
+        2..=8 => println!("from 2 to 8"), // match from 2 to 8
+        _ => println!("others"),
+    }
+
+    // Binding a Range
+    println!();
+    println!("-- Binding a Range --");
+    let bindin_y = 3;
+    match bindin_y {
+        var @ 2..=9 => println!("{}", var), // binding, print bindin_y
+        _ => println!("others"),
+    }
+
+    // Generics
+    println!();
+    println!("-- Generics --");
+    let gen_x: Option<bool> = Some(false); // generic parameters
+    let gen_y: Option<i32> = Some(22);
+    let gen_z: Option<f64> = Some(45.47);
+    let gen_m: Option<i32> = None;
+    match gen_x {
+        Some(gen_x) => {
+            println!("gen_x = {}", gen_x)
+        }
+        None => {
+            println!("gen_x = None")
+        }
+    }
+    match gen_y {
+        Some(gen_y) => {
+            println!("gen_y = {}", gen_y)
+        }
+        None => {
+            println!("gen_y = None")
+        }
+    }
+    match gen_z {
+        Some(gen_z) => {
+            println!("gen_z = {}", gen_z)
+        }
+        None => {
+            println!("gen_z = None")
+        }
+    }
+    match gen_m {
+        Some(gen_m) => {
+            println!("gen_m = {}", gen_m)
+        }
+        None => {
+            println!("gen_m = None")
+        }
+    }
 }
 
 fn foo() -> bool {
